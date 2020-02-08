@@ -1,6 +1,4 @@
-import java.io.File;  // Import the File class
-import java.io.FileNotFoundException;  // Import this class to handle errors
-import java.util.Scanner; // Import the Scanner class to read text files
+
 
 public class BalancesMain {
 
@@ -16,7 +14,16 @@ public class BalancesMain {
 	     
 	      while (myReader.hasNextLine()) {
 			String data = myReader.nextLine();
-			System.out.println(data);
+			//System.out.println(data);
+			String account[] = data.split(",");
+
+			String accountName = account[1];
+		    String ledgerBalance = account[2];
+		    String availableBalance = account[3];
+
+		    System.out.println("Account Name: " + accountName +
+		    	", Ledger Balance: " + ledgerBalance +
+		    	", Available Balance: " + availableBalance);
 	      }
 
 	      myReader.close();
